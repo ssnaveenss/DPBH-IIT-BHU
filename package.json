@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "jpickle": "^0.4.1"
+  }
+}
