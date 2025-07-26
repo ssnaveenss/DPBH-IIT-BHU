@@ -1,3 +1,5 @@
+
+
 ---
 
 # Dark Pattern Buster – Chrome Extension
@@ -107,3 +109,4 @@ And finally, it’s fast and doesn’t need a GPU, which was perfect for running
 **Random Forest gave us the best balance between accuracy, speed, and interpretability — ideal for a real-time Chrome extension.**
 
 ---
+
