@@ -1,11 +1,14 @@
 {
     "manifest_version": 2,
-    "name": "Dark Pattern Detector copy",
+    "name": "Techsperts Dark Pattern Detector",
     "description":"This is an e-commerce dark pattern detector it detects all the deceptive dark pattern in ecommerce websites and also it blocks all those annoying signup to continue pop ups",
     "version": "1.0",
     "background":{
         "scripts":["background.js"]
     },
+    "permissions": [
+      "storage"
+    ],
     "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {

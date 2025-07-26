@@ -2,18 +2,18 @@
 var count=0;
 
 function collectTextNodes(element, texts) {
-  for (const childNode of element.childNodes) {
+  for (const el of element.childNodes) {
     if (
-      childNode.nodeType === Node.TEXT_NODE &&
-      childNode.nodeValue.trim() !== ""
+      el.nodeType === Node.TEXT_NODE &&
+      el.nodeValue.trim() !== ""
       ) {
-        texts.push({ text: childNode.nodeValue.trim(), element: childNode.parentElement });
+        texts.push({ text: el.nodeValue.trim(), element: el.parentElement });
       } else if (
-      childNode.nodeType === Node.ELEMENT_NODE &&
-      childNode.tagName.toUpperCase() !== "SCRIPT" &&
-      childNode.tagName.toUpperCase() !== "STYLE"
+      el.nodeType === Node.ELEMENT_NODE &&
+      el.tagName.toUpperCase() !== "SCRIPT" &&
+      el.tagName.toUpperCase() !== "STYLE"
       ) {
-        collectTextNodes(childNode, texts);
+        collectTextNodes(el, texts);
       }
     }
   }
@@ -99,7 +99,7 @@ function alertButtonText(popUp) {
 
   function isLikelyPopup(node) {
     if (node && node.classList) {
-      const popupClasses = [
+      const classnames = [
         'popup',
         'modal',
         'login-modal-div',
@@ -178,12 +178,12 @@ function alertButtonText(popUp) {
         'overlay-footer',
         'dialog-footer',
       ];
-      return popupClasses.some((popupClass) => node.classList.contains(popupClass));
+      return classnames.some((popupClass) => node.classList.contains(popupClass));
     }
     return false;
   }
   
-  const observer = new MutationObserver(function(mutations) {
+  const obs = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       if (mutation.addedNodes && mutation.addedNodes.length > 0) {
         const isPopup = Array.from(mutation.addedNodes).some(isLikelyPopup);
@@ -196,4 +196,5 @@ function alertButtonText(popUp) {
     });
   });
 
-  observer.observe(document, { childList: true, subtree: true });
+  obs.observe(document, { childList: true, subtree: true });
+  

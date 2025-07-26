@@ -5,7 +5,7 @@ body {
   
   #popup-container {
     background-color: black;
-    color: green; /* Change to red if you prefer red font */
+    color: green; 
     text-align: center;
     padding: 20px;
   }
