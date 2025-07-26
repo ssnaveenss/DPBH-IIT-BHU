@@ -1,5 +1,3 @@
-Certainly, Nav! Here's your **README.md content**, cleaned up and professionally formatted without emojis or extra fluff. I've used markdown best practices—like headings, bold text, lists, and spacing—for clarity and structure, while keeping your exact content intact:
-
 ---
 
 # Dark Pattern Buster – Chrome Extension
